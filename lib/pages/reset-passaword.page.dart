@@ -1,23 +1,50 @@
-import 'package:BorgesAPP/pages/reset-passaword.page.dart';
 import 'package:flutter/material.dart';
-
-class HomePage extends StatelessWidget {
+class ResetPassworPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          color: Colors.black38,
+          onPressed: () => Navigator.pop(context,false),
+        ),
+      ),
       body: Container(
+        color: Colors.white,
         padding: EdgeInsets.only(
           top: 60,
           left: 40,
           right: 40,
         ),
-        color: Colors.white,
         child: ListView(
           children: <Widget>[
             SizedBox(
-              width: 128,
-              height: 128,
-              child: Image.asset('assets/logo.jpg'),
+              width: 200,
+              height: 200,
+              child: Image.asset("assets/logo.jpg")
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Text(
+             "Esqueceu sua senha?",
+             style: TextStyle(
+               fontSize: 28,
+               fontWeight: FontWeight.w500,
+             ) 
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Text(
+              "Por favor, informe o E-mail associado a sua conta que enviaremos o link e as instruções para restauração da sua senha ",
+              style: TextStyle(
+                fontSize: 14,
+                fontWeight: FontWeight.w300,
+              ),
+              textAlign: TextAlign.center,
             ),
             SizedBox(
               height: 20,
@@ -27,49 +54,15 @@ class HomePage extends StatelessWidget {
               decoration: InputDecoration(
                 labelText: 'E-mail',
                 labelStyle: TextStyle(
-                  color: Colors.black87,
+                  color: Colors.black38,
                   fontWeight: FontWeight.w400,
                   fontSize: 20,
                 )
               ),
-              style: TextStyle(fontSize: 20),
+              style: TextStyle(fontSize: 16),
             ),
             SizedBox(
-              height: 10,
-            ),
-            TextFormField(
-              keyboardType: TextInputType.text,
-              obscureText: true,
-              decoration: InputDecoration(
-                labelText: 'Senha',
-                labelStyle: TextStyle(
-                  color: Colors.black87,
-                  fontWeight: FontWeight.w400,
-                  fontSize: 20,
-                )
-              ),
-              style: TextStyle(fontSize: 20),
-            ),
-              Container(
-                height: 40,
-                alignment:  Alignment.centerRight,
-                child: FlatButton(
-                  child: Text(
-                    "Recuperar Senha",
-                    textAlign: TextAlign.right,
-                  ),
-                  onPressed: () => {
-                    Navigator.push(
-                      context, 
-                      MaterialPageRoute(
-                        builder: (context) => ResetPassworPage(),
-                      ),
-                    ),
-                  }
-                )
-              ),
-            SizedBox(
-              height: 40,
+              height: 20,
             ),
             Container(
               height: 60,
@@ -94,7 +87,7 @@ class HomePage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
                       Text(
-                        'Login',
+                        'Enviar',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           color: Colors.white,
@@ -102,7 +95,7 @@ class HomePage extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        'Systm',
+                        'Icon',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           color: Colors.white,
@@ -114,10 +107,13 @@ class HomePage extends StatelessWidget {
                   onPressed: () => {},
                 ),
               ),
+            ),
+            SizedBox(
+              height: 20,
             )
           ],
         ),
-      )
+      ),
     );
   }
 }

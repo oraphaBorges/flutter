@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
       title: '@ORaphaBorges',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.green,
+        primarySwatch: Colors.pink,
       ),
       home: HomePage(),
     );

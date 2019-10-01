@@ -3,6 +3,7 @@
 A new Flutter project to learn flutter.
 
 CLASS 01 - [Flutter Layouts: Tela de Login](https://www.youtube.com/watch?v=lmArDnXxvtQ&t=11s)
+CLASS 02 - [Flutter Layouts - Tela de Restauração de Senha](https://youtu.be/JSBIg_RsQ34s)
 
 ## Getting Started
 
