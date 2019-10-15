@@ -1,4 +1,5 @@
 import 'package:BorgesAPP/pages/reset-passaword.page.dart';
+import 'package:BorgesAPP/pages/index.page.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -6,13 +7,13 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        padding: EdgeInsets.only(
-          top: 60,
-          left: 40,
-          right: 40,
-        ),
         color: Colors.white,
         child: ListView(
+          padding: EdgeInsets.only(
+            top: 60,
+            left: 40,
+            right: 40,
+          ),
           children: <Widget>[
             SizedBox(
               width: 128,
@@ -111,7 +112,14 @@ class HomePage extends StatelessWidget {
                       ),
                     ],
                   ),
-                  onPressed: () => {},
+                  onPressed: () => {
+                    Navigator.push(
+                      context, 
+                      MaterialPageRoute(
+                        builder: (context) => IndexPage(),
+                      ),
+                    ),
+                  }
                 ),
               ),
             )

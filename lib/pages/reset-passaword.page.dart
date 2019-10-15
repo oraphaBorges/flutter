@@ -13,12 +13,12 @@ class ResetPassworPage extends StatelessWidget {
       ),
       body: Container(
         color: Colors.white,
-        padding: EdgeInsets.only(
-          top: 60,
-          left: 40,
-          right: 40,
-        ),
         child: ListView(
+          padding: EdgeInsets.only(
+            top: 60,
+            left: 40,
+            right: 40,
+          ),
           children: <Widget>[
             SizedBox(
               width: 200,
