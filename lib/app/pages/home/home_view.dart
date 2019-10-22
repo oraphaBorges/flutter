@@ -1,18 +1,28 @@
-import 'package:BorgitozApp/app/pages/blank/blank_view.dart';
 import 'package:flutter/material.dart';
+import 'package:BorgitozApp/app/pages/blank/blank_view.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:BorgitozApp/components/appdrawer,component.dart';
+import 'Package:BorgitozApp/app/pages/home/home_controller.dart';
+import 'package:flutter_clean_architecture/flutter_clean_architecture.dart';
 
-class HomeView extends StatelessWidget {
+class HomeView extends View {
+ 
+  @override
+  State<StatefulWidget> createState() {
+    return HomeViewState(HomeController());
+  }
+
+}
+
+class HomeViewState extends ViewState<HomeView,HomeController> {
+   HomeViewState(Controller controller) : super(controller);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: AppDrawer(),
       appBar: AppBar(
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back),
-          color: Colors.black38,
-          onPressed: () => Navigator.pop(context,false),
-        ),
+        
       ),
       body: Container(
         color: Colors.white,
@@ -141,42 +151,21 @@ class HomeView extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
                   FlatButton(
-                    onPressed: () async {
-                      const url = 'https://facebook.com/oraphaborges';
-                      if (await canLaunch(url)) {
-                        await launch(url);
-                      } else {
-                        throw 'Could not launch $url';
-                      }
-                    },
+                    onPressed: controller.facebook,
                     child: Icon(
                       FontAwesomeIcons.facebook,
                       color: Colors.blueAccent,
                     ),
                   ),
                   FlatButton(
-                    onPressed: () async {
-                      const url = 'https://instagram.com/oraphaborges';
-                      if (await canLaunch(url)) {
-                        await launch(url);
-                      } else {
-                        throw 'Could not launch $url';
-                      }
-                    },
+                    onPressed: controller.instagram,
                     child: Icon(
                       FontAwesomeIcons.instagram,
                       color: Colors.pink,
                     ),
                   ),
                   FlatButton(
-                    onPressed: () async {
-                      const url = 'https://twitter.com/oraphaborges';
-                      if (await canLaunch(url)) {
-                        await launch(url);
-                      } else {
-                        throw 'Could not launch $url';
-                      }
-                    },
+                    onPressed: controller.twitter,
                     child: Icon(
                       FontAwesomeIcons.twitter,
                       color: Colors.blue,
